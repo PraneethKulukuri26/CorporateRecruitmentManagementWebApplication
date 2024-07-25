@@ -91,7 +91,7 @@ public class PostAJobController extends HttpServlet{
 			skills.append(str+"^");
 		}
 		
-		int result=con.insertData("insert into job_posts (`uid`,`title`,`company`,`location`,`qualification`,`experence`,`skills`,`description`,`responsibilities`,`contact`,`postedDate`) values("+uid+",'"+poRequest.getTitle()+"','"+poRequest.getCompanyName()+"','"+poRequest.getLocation()+"','"+qualification.toString()+"','"+poRequest.getExperence()+"','"+skills.toString()+"','"+poRequest.getDescription()+"','"+poRequest.getResponsibilities()+"','"+poRequest.getContact()+"',now())");
+		int result=con.insertData("insert into job_posts (`uid`,`title`,`company`,`location`,`qualification`,`experence`,`skills`,`description`,`responsibilities`,`contact`,`postedDate`) values("+uid+",\""+poRequest.getTitle()+"\",\""+poRequest.getCompanyName()+"\",\""+poRequest.getLocation()+"\",\""+qualification.toString()+"\",\""+poRequest.getExperence()+"\",\""+skills.toString()+"\",\""+poRequest.getDescription()+"\",\""+poRequest.getResponsibilities()+"\",\""+poRequest.getContact()+"\",now())");
 		
 		return result;
 	}
